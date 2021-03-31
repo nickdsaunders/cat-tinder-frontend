@@ -28,7 +28,15 @@ class App extends Component {
             path="/catindex"
             render={() => <CatIndex cats={this.state.cats} />}
           />
-          <Route path="/catshow/:id" component={CatShow} />
+          <Route path="/catshow/:id" render = {(props) => {
+            //get the id from the URL
+            // Const id to be that of the id of a cat and the plus sign changes the datatype to an integer because without it it will be passed as a string
+            const id = +props.match.params.id;
+            // finding the cat from mock data using the id by finding the cats data
+            const foundKitty = this.state.cats.find(cat => cat.id === id);
+            // pass that cat into CatShow as propData
+            return <CatShow cat={foundKitty}/>}
+          } />
           <Route path="/catnew" component={CatNew} />
           <Route path="/catedit/:id" component={CatEdit} />
           <Route component={NotFound} />
