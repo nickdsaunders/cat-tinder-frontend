@@ -32,10 +32,10 @@ class App extends Component {
       <Router>
         <Header />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={ Home } />
           <Route
             path="/catindex"
-            render={() => <CatIndex cats={this.state.cats} />}
+            render={() => <CatIndex cats={ this.state.cats } />}
           />
           <Route path="/catshow/:id" render = {(props) => {
             //get the id from the URL
@@ -52,7 +52,7 @@ class App extends Component {
           }}
            />
           <Route 
-          exact path={"/catedit/:id"} render={(props) => {
+          exact path={ "/catedit/:id" } render={(props) => {
             let id = props.match.params.id
             let cat = this.state.cats.find(cat => cat.id === +id)
             return (
@@ -63,7 +63,7 @@ class App extends Component {
             )
           }} 
         />
-          <Route component={NotFound} />
+          <Route component={ NotFound } />
         </Switch>
         <Footer />
       </Router>

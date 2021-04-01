@@ -38,8 +38,8 @@ class CatEdit extends Component {
             <Input
               type="text"
               name="name"
-              value={this.state.form.name}
-              onChange={this.handleChange}
+              value={ this.state.form.name }
+              onChange={ this.handleChange}
             />
           </FormGroup>
           <FormGroup>
@@ -47,8 +47,8 @@ class CatEdit extends Component {
             <Input
               type="number"
               name="age"
-              value={this.state.form.age}
-              onChange={this.handleChange}
+              value={ this.state.form.age }
+              onChange={ this.handleChange }
             />
           </FormGroup>
           <FormGroup>
@@ -56,17 +56,17 @@ class CatEdit extends Component {
             <Input
               type="text"
               name="enjoys"
-              value={this.state.form.enjoys}
-              onChange={this.handleChange}
+              value={ this.state.form.enjoys }
+              onChange={ this.handleChange }
             />
           </FormGroup>
           <Button
-          onClick={ this.handleSubmit}
+          onClick={ this.handleSubmit }
           >
             Edit Cat
           </Button>
         </Form>
-        { this.state.submitted && <Redirect to={ `/catshow/${this.props.cat.id}` }/> }
+        { this.state.submitted && <Redirect to={ `/catshow/${ this.props.cat.id }` }/> }
       </>
     );
   }
