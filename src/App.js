@@ -15,9 +15,13 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cats: cats,
+      cats: cats
     };
   }
+  createNewCat = (newcat) => {
+    console.log(newcat)
+  }
+
   render() {
     return (
       <Router>
@@ -37,7 +41,11 @@ class App extends Component {
             // pass that cat into CatShow as propData
             return <CatShow cat={foundKitty}/>}
           } />
-          <Route path="/catnew" component={CatNew} />
+          <Route path="/catnew" render={(props) => {
+            return <CatNew createNewCat={
+              this.createNewCat } />
+          }}
+           />
           <Route path="/catedit/:id" component={CatEdit} />
           <Route component={NotFound} />
         </Switch>

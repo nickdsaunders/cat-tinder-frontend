@@ -1,12 +1,40 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
+import React, { useState } from "react";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from "reactstrap";
 
-class Header extends Component{
-  render(){
-    return(
-      <div>
-        <h1>This is a Header</h1>
-      </div>
-    )
-  }
-}
-export default Header
+const Header = (props) => {
+  const [collapsed, setCollapsed] = useState(true);
+
+  const toggleNavbar = () => setCollapsed(!collapsed);
+
+  return (
+    <div>
+      <Navbar color="faded" light>
+        <NavbarBrand href="/" className="mr-auto">
+          Cat Tinder
+        </NavbarBrand>
+        <NavbarToggler onClick={toggleNavbar} className="mr-2" />
+        <Collapse isOpen={!collapsed} navbar>
+          <Nav navbar>
+            <NavItem>
+              <NavLink href="/catindex/">Index</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/catedit/">Edit Cats</NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+    </div>
+  );
+};
+
+export default Header;

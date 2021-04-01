@@ -23,8 +23,8 @@ describe('When Header loads', () => {
     it('displays Header', () =>{
         //act
         const renderedHeader = Header;
-    })
+    
         //assert
     expect(renderedHeader.length).toEqual(1);
-
+    })
 })

@@ -2,23 +2,23 @@
 import React from "react";
 import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import CatEdit from "./pages/CatEdit";
+import CatEdit from "../pages/CatEdit";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-fdescribe("When Cat Edit renders", () => {
+describe("When Cat Edit renders", () => {
   let renderedCatEdit;
   beforeEach(() => {
     // arrange
     renderedCatEdit = shallow(<CatEdit />);
   });
 
-  it("displays Cat Edit page", () => {
+  it("displays a Heading", () => {
     // act
     // user is looking for cat edit page
-    const renderedEdit = renderedCatEdit.find("CatEdit");
+    const heading = renderedCatEdit.find("h1");
 
     // assert
-    expect(renderedEdit.length).toEqual(1);
+    expect(heading.text()).toEqual("This is a CatEdit");
   });
 });
