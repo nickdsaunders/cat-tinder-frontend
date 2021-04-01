@@ -28,7 +28,7 @@ const Header = (props) => {
               <NavLink href="/catindex/">Index</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/catshow/1">Cat 1</NavLink>
+              <NavLink href="/catedit/">Edit Cats</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

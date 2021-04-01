@@ -10,7 +10,7 @@ class CatNew extends Component {
       form: {
         name: "",
         age: "",
-        enjoys: "",
+        enjoys: ""
       },
       submitted: false
     };
@@ -19,8 +19,6 @@ class CatNew extends Component {
   handleChange = (e) => {
     let { form } = this.state;
     form[e.target.name] = e.target.value;
-    // console.log("name", e.target.name);
-    // console.log("value", e.target.value);
     this.setState({ form: form });
   };
 
