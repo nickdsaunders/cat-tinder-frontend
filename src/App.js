@@ -15,17 +15,93 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cats: cats
+      cats: []
     };
   }
-  createNewCat = (newcat) => {
-    console.log(newcat)
+
+  componentDidMount(){
+    this.catIndex()
+  }
+
+  catIndex = () => {
+    fetch("http://localhost:3000/cats")
+    .then(response => {
+      return response.json()
+    }) 
+    .then(catsArray => {
+      this.setState({ cats: catsArray })
+    })
+    .catch(errors => {
+      console.log("index errors:" , errors)
+    })
   }
   
-  updateCat = (cat, id) => {
-    console.log("cat:" , cat)
-    console.log("id:" , id)
+  createNewCat = (newCat) => {
+    fetch("http://localhost:3000/cats" , {
+      body: JSON.stringify(newCat),
+      headers: {
+        "Content-Type" : "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("Something is wrong with your submission.")
+      }
+      return response.json()
+    })
+    .then(payload => {
+      console.log(payload)
+      this.catIndex()
+    })
+    .catch(errors => {
+      console.log("create errors:" , errors)
+    })
   }
+  updateCat = (Cat , id) => {
+    fetch(`http://localhost:3000/cats/${id}` , {
+      body: JSON.stringify(Cat),
+      headers: {
+        "Content-Type" : "application/json"
+      },
+      method: "PATCH"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("Something is wrong with your submission.")
+      }
+      return response.json()
+    })
+    .then(payload => {
+      console.log(payload)
+      this.catIndex()
+    })
+    .catch(errors => {
+      console.log("update errors:" , errors)
+    })
+  }
+  deleteCat = (id) => {
+    fetch(`http://localhost:3000/cats/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("Something is wrong with your submission.")
+      }
+      return response.json()
+    })
+    .then(payload => {
+      console.log(payload)
+      this.catIndex()
+    })
+    .catch(errors => {
+      console.log("delete errors:", errors)
+    })
+  }
+
 
   render() {
     return (
