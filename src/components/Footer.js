@@ -3,7 +3,7 @@ class Footer extends Component{
   render(){
     return(
       <div>
-        <h1>This is a Footer</h1>
+        <h5 className= "footers"> © 2021 Nick Saunders & Deven Perkins</h5>
       </div>
     )
   }
