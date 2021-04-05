@@ -1,6 +1,8 @@
 .home-pic{
-  width: 100%;
-  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
 }
 
 .display-3{
@@ -12,7 +14,7 @@
   font-family: Apple Chancery, cursive;
 }
 
-.footer{
+.footers{
   text-align: right;
   font-family: Apple Chancery, cursive;
 }
