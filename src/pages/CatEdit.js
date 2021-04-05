@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router";
 import { Form, FormGroup, Label, Input } from "reactstrap";
 import { Button } from 'reactstrap';
+import { NavLink } from 'react-router-dom'
 
 class CatEdit extends Component {
   constructor(props) {

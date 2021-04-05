@@ -25,10 +25,10 @@ const Header = (props) => {
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink href="/catindex/">Index</NavLink>
+              <NavLink href="/catindex/">List of Sexy Cats</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/catedit/">Edit Cats</NavLink>
+              <NavLink href="/catnew/">Add your sexy kitty</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

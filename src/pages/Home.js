@@ -11,7 +11,7 @@ const home = (props) => {
           <h1 className="display-3">Cat Tinder</h1>
           <p className="lead">It's a PLAYdating app for cats!</p>
           <div className="main-body">
-        <img src={ cat } alt="sexy cat laying on its back" className="home-pic"/>
+        <img src={ cat } alt="super sexy cat laying on its back" className="home-pic"/>
       </div>
         </Container>
       </Jumbotron>
