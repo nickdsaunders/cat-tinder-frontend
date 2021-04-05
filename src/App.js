@@ -111,7 +111,7 @@ class App extends Component {
           <Route exact path="/" component={ Home } />
           <Route
             path="/catindex"
-            render={() => <CatIndex cats={ this.state.cats } />}
+            render={(props) => <CatIndex cats={ this.state.cats } />}
           />
           <Route path="/catshow/:id" render = {(props) => {
             //get the id from the URL
