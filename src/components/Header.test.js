@@ -1,30 +1,35 @@
-// Imports React into our test file.
 import React from 'react' 
-
-// Imports Enzyme testing and deconstructs Shallow into our test file. 
 import Enzyme, { shallow } from 'enzyme' 
-
-// Imports Adapter utilizing the latest react version into our test file so we can run a testing render on any component we may need.
 import Adapter from 'enzyme-adapter-react-16' 
-
- // Imports in the component we are going to be testing. 
 import Header from './Header'
-
-//Allows us to utilize the adapter we import in earlier, allowing us to call and render a component. 
+import { render } from '@testing-library/react'
 Enzyme.configure({ adapter: new Adapter() }) 
 
 describe('When Header loads', () => {
-    let renderedApp;
+    let renderedHeader;
     beforeEach(() => {
         //arrange
-        renderedApp = shallow(<Header/>);
+        renderedHeader = shallow(<Header/>);
     });
 
-    it('displays Header', () =>{
+    it('displays hamburger icon and the menu is collapsed', () => {
         //act
-        const renderedHeader = Header;
+        const hamburger = renderedHeader.find('NavbarToggler');
+        const collapsedComponent = renderedHeader.find('Collapse')
     
         //assert
-    expect(renderedHeader.length).toEqual(1);
+        expect(hamburger.length).toEqual(1);
+        expect(collapsedComponent.props().isOpen).toEqual(false);
+    })
+
+    it('expands the menu when the icon is clicked', () => {
+        // act
+        const hamburger = renderedHeader.find('NavbarToggler');
+        hamburger.simulate('click');
+
+        // assert
+        const collapsedComponent = renderedHeader.find('Collapse');
+        expect(collapsedComponent.props().isOpen).toEqual(true);
+
     })
 })

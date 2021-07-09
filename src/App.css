@@ -1,20 +1,44 @@
-.home-pic{
+.header-navbar {
+  background-color: aquamarine;
+  margin-bottom: 25px;
+}
+
+.mr-auto {
+  font-family: Apple Chancery, cursive;
+  font-size: 25px !important;
+  padding: 10px;
+}
+
+.nav-item {
+  font-family: Apple Chancery, cursive;
+  font-size: 18px !important;
+  padding: 10px;
+}
+
+.home-pic {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 75%;
+  margin: auto;
+  width: 65%;
 }
 
-.display-3{
+.display-3 {
   text-align: center;
   font-family: Apple Chancery, cursive;
 }
-.lead{
+.lead {
   text-align: center;
   font-family: Apple Chancery, cursive;
 }
 
-.footers{
-  text-align: right;
+.footer-container {
+  width: 100%;
+  height: 50px;
+  margin-top: 25px;
+  padding-top: 10px;
+  background-color: aquamarine;
+}
+
+.footer-h3 {
+  text-align: center;
   font-family: Apple Chancery, cursive;
 }

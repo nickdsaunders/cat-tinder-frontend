@@ -1,11 +1,13 @@
-import React, { Component } from 'react'
-class Footer extends Component{
-  render(){
-    return(
-      <div>
-        <h5 className= "footers"> © 2021 Nick Saunders & Deven Perkins</h5>
+import React, { Component } from 'react';
+import '../App.css';
+
+class Footer extends Component {
+  render() {
+    return (
+      <div className="footer-container">
+        <h3 className="footer-h3"> © 2021 Nick Saunders & Deven Perkins</h3>
       </div>
-    )
+    );
   }
 }
-export default Footer
+export default Footer;

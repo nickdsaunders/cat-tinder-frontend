@@ -1,0 +1,27 @@
+.show-container {
+  margin: 25px auto;
+}
+
+.show-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buttons-wrapper {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-item {
+  margin: 0 5px;
+}
+
+@media (min-width: 960px) {
+  .show-container {
+    width: 768px !important;
+  }
+}
