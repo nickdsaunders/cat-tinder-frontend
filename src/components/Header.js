@@ -1,5 +1,5 @@
-// import React, { Component } from 'react'
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import '../App.css';
 import {
   Collapse,
   Navbar,
@@ -7,28 +7,31 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-} from "reactstrap";
+  NavLink
+} from 'reactstrap';
 
-const Header = (props) => {
+const Header = () => {
   const [collapsed, setCollapsed] = useState(true);
-
   const toggleNavbar = () => setCollapsed(!collapsed);
 
   return (
     <div>
-      <Navbar color="faded" light>
+      <Navbar className="header-navbar" light>
         <NavbarBrand href="/" className="mr-auto">
-          Cat Tinder
+          Frisky Felines
         </NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink href="/catindex/">List of Sexy Cats</NavLink>
+              <NavLink href="/catindex/" className="nav-item">
+                List of Sexy Cats
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/catnew/">Add your sexy kitty</NavLink>
+              <NavLink href="/catnew/" className="nav-item">
+                Add your sexy kitty
+              </NavLink>
             </NavItem>
           </Nav>
         </Collapse>
